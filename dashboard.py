@@ -13,7 +13,7 @@ import numpy as np
 px.defaults.template = 'plotly_dark'
 px.defaults.color_continuous_scale = 'reds'
 # Koneksi ke MongoDB
-client = MongoClient('mongodb://localhost:27017/')
+client = MongoClient(st.secrets["MONGO_URI"])
 db = client['GaitDB']
 collection = db['gait_data']
 
