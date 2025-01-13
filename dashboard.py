@@ -10,7 +10,7 @@ import pandas as pd
 from pymongo import MongoClient
 import numpy as np
 
-px.defaults.template = 'plotly'
+px.defaults.template = 'plotly_dark'
 px.defaults.color_continuous_scale = 'reds'
 # Koneksi ke MongoDB
 client = MongoClient(st.secrets["MONGO_URI"])
@@ -127,14 +127,14 @@ else:
         y=pelvis["Mean_Rpelvis"], 
         mode='lines',
         name='Right',
-        line=dict(color='dark blue')
+        line=dict(color='cyan')
     ))
     fig1.add_trace(go.Scatter(
         x=pelvis["%cycle"], 
         y=pelvis["Mean_Rpelvis"] + pelvis["std_Rpelvis"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         showlegend=False
     ))
     fig1.add_trace(go.Scatter(
@@ -142,7 +142,7 @@ else:
         y=pelvis["Mean_Rpelvis"] - pelvis["std_Rpelvis"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -215,14 +215,14 @@ else:
         y=knee["Mean_Rknee"], 
         mode='lines',
         name='Right',
-        line=dict(color='dark blue')
+        line=dict(color='cyan')
     ))
     fig2.add_trace(go.Scatter(
         x=knee["%cycle"], 
         y=knee["Mean_Rknee"] + knee["std_Rknee"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         showlegend=False
     ))
     fig2.add_trace(go.Scatter(
@@ -230,7 +230,7 @@ else:
         y=knee["Mean_Rknee"] - knee["std_Rknee"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -240,7 +240,7 @@ else:
         title="Knee",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly",
+        template="plotly_dark",
         title_x=0.5
     )
 
@@ -302,14 +302,14 @@ else:
         y=hip["Mean_Rhip"], 
         mode='lines',
         name='Right',
-        line=dict(color='dark blue')
+        line=dict(color='cyan')
     ))
     fig3.add_trace(go.Scatter(
         x=hip["%cycle"], 
         y=hip["Mean_Rhip"] + hip["std_Rhip"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         showlegend=False
     ))
     fig3.add_trace(go.Scatter(
@@ -317,7 +317,7 @@ else:
         y=hip["Mean_Rhip"] - hip["std_Rhip"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -327,7 +327,7 @@ else:
         title="Hip",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly",
+        template="plotly_dark",
         title_x=0.5
     )
 
@@ -388,14 +388,14 @@ else:
         y=ankle["Mean_Rankle"], 
         mode='lines',
         name='Right',
-        line=dict(color='dark blue')
+        line=dict(color='cyan')
     ))
     fig4.add_trace(go.Scatter(
         x=ankle["%cycle"], 
         y=ankle["Mean_Rankle"] + ankle["std_Rankle"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         showlegend=False
     ))
     fig4.add_trace(go.Scatter(
@@ -403,7 +403,7 @@ else:
         y=ankle["Mean_Rankle"] - ankle["std_Rankle"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='dark blue', width=0),
+        line=dict(color='cyan', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -413,7 +413,7 @@ else:
         title="Ankle",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly",
+        template="plotly_dark",
         title_x=0.5,
     )
     tab1, tab2, tab3, tab4 = st.tabs(["PELVIS", "KNEE","HIP","ANKLE"])
