@@ -10,7 +10,7 @@ import pandas as pd
 from pymongo import MongoClient
 import numpy as np
 
-px.defaults.template = 'plotly_dark'
+px.defaults.template = 'plotly'
 px.defaults.color_continuous_scale = 'reds'
 # Koneksi ke MongoDB
 client = MongoClient(st.secrets["MONGO_URI"])
@@ -153,7 +153,7 @@ else:
         title="Pelvis",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly_dark",
+        template="plotly",
         title_x=0.5
     )
 
@@ -240,7 +240,7 @@ else:
         title="Knee",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly_dark",
+        template="plotly",
         title_x=0.5
     )
 
@@ -327,7 +327,7 @@ else:
         title="Hip",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly_dark",
+        template="plotly",
         title_x=0.5
     )
 
@@ -413,7 +413,7 @@ else:
         title="Ankle",
         xaxis_title="%Cycle",
         yaxis_title="Value",
-        template="plotly_dark",
+        template="plotly",
         title_x=0.5,
     )
     tab1, tab2, tab3, tab4 = st.tabs(["PELVIS", "KNEE","HIP","ANKLE"])
