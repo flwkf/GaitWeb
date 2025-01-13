@@ -127,14 +127,14 @@ else:
         y=pelvis["Mean_Rpelvis"], 
         mode='lines',
         name='Right',
-        line=dict(color='cyan')
+        line=dict(color='dark blue')
     ))
     fig1.add_trace(go.Scatter(
         x=pelvis["%cycle"], 
         y=pelvis["Mean_Rpelvis"] + pelvis["std_Rpelvis"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         showlegend=False
     ))
     fig1.add_trace(go.Scatter(
@@ -142,7 +142,7 @@ else:
         y=pelvis["Mean_Rpelvis"] - pelvis["std_Rpelvis"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -215,14 +215,14 @@ else:
         y=knee["Mean_Rknee"], 
         mode='lines',
         name='Right',
-        line=dict(color='cyan')
+        line=dict(color='dark blue')
     ))
     fig2.add_trace(go.Scatter(
         x=knee["%cycle"], 
         y=knee["Mean_Rknee"] + knee["std_Rknee"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         showlegend=False
     ))
     fig2.add_trace(go.Scatter(
@@ -230,7 +230,7 @@ else:
         y=knee["Mean_Rknee"] - knee["std_Rknee"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -302,14 +302,14 @@ else:
         y=hip["Mean_Rhip"], 
         mode='lines',
         name='Right',
-        line=dict(color='cyan')
+        line=dict(color='dark blue')
     ))
     fig3.add_trace(go.Scatter(
         x=hip["%cycle"], 
         y=hip["Mean_Rhip"] + hip["std_Rhip"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         showlegend=False
     ))
     fig3.add_trace(go.Scatter(
@@ -317,7 +317,7 @@ else:
         y=hip["Mean_Rhip"] - hip["std_Rhip"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
@@ -388,14 +388,14 @@ else:
         y=ankle["Mean_Rankle"], 
         mode='lines',
         name='Right',
-        line=dict(color='cyan')
+        line=dict(color='dark blue')
     ))
     fig4.add_trace(go.Scatter(
         x=ankle["%cycle"], 
         y=ankle["Mean_Rankle"] + ankle["std_Rankle"], 
         mode='lines',
         name='Upper Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         showlegend=False
     ))
     fig4.add_trace(go.Scatter(
@@ -403,7 +403,7 @@ else:
         y=ankle["Mean_Rankle"] - ankle["std_Rankle"], 
         mode='lines',
         name='Lower Bound (Right)',
-        line=dict(color='cyan', width=0),
+        line=dict(color='dark blue', width=0),
         fill='tonexty',
         fillcolor='rgba(0, 255, 255, 0.2)',
         showlegend=False
