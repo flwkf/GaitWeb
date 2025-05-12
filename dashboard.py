@@ -242,7 +242,8 @@ else:
         xaxis_title="%Cycle",
         yaxis_title="Value",
         template="plotly_dark",
-        title_x=0.5
+        title_x=0.5,
+        hovermode="x"
     )
 
 
@@ -329,7 +330,8 @@ else:
         xaxis_title="%Cycle",
         yaxis_title="Value",
         template="plotly_dark",
-        title_x=0.5
+        title_x=0.5,
+        hovermode="x"
     )
 
     # Ankle
@@ -415,7 +417,8 @@ else:
         xaxis_title="%Cycle",
         yaxis_title="Value",
         template="plotly_dark",
-        title_x=0.5,
+        title_x=0.5,,
+        hovermode="x"
     )
     tab1, tab2, tab3, tab4 = st.tabs(["PELVIS", "KNEE","HIP","ANKLE"])
     data = np.random.randn(10, 1)
