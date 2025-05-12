@@ -154,7 +154,8 @@ else:
         xaxis_title="%Cycle",
         yaxis_title="Value",
         template="plotly",
-        title_x=0.5
+        title_x=0.5,
+        hovermode="x"
     )
 
     # Knee
