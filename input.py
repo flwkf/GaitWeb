@@ -125,18 +125,31 @@ if uploaded_file is not None:
             if hasattr(gait_data, 'df'):
     
                 data_dict = gait_data.to_dict()
-    
-                # Menyisipkan data ke MongoDB
+
+                # Periksa apakah ada data kosong (None atau NaN)
+                def check_missing(data):
+                    if isinstance(data, dict):
+                        return any(check_missing(v) for v in data.values())
+                    elif isinstance(data, list):
+                        return any(check_missing(v) for v in data)
+                    else:
+                        return pd.isna(data)
                 
-                # Create a new client and connect to the server
-                client = MongoClient(st.secrets["MONGO_URI"])            
-                db = client['GaitDB']
-                collection = db['gait_data']
+                if check_missing(data_dict):
+                    st.warning("Data tidak lengkap. Pastikan semua nilai diisi sebelum menyimpan ke database.")
+                else:
     
-                try:
-                    collection.insert_one(data_dict)
-                    st.success("Data successfully inserted into MongoDB!")
-                except Exception as e:
-                    st.error(f"Error inserting data into MongoDB: {e}")
+                    # Menyisipkan data ke MongoDB
+                    
+                    # Create a new client and connect to the server
+                    client = MongoClient(st.secrets["MONGO_URI"])            
+                    db = client['GaitDB']
+                    collection = db['gait_data']
+        
+                    try:
+                        collection.insert_one(data_dict)
+                        st.success("Data successfully inserted into MongoDB!")
+                    except Exception as e:
+                        st.error(f"Error inserting data into MongoDB: {e}")
             else:
                 st.error("Failed to process the uploaded data.")
