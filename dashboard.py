@@ -30,6 +30,7 @@ df.columns = df.columns.str.replace('Body Measurements.', '')
 df.columns = df.columns.str.replace('Norm Kinematics.', '')
 
 st.title("Dashboard Gait Analysis")
+st.sidebar.markdown(f"**Jumlah Data Tersedia:** {len(df)}")
 st.sidebar.title("Filter Data")
 # Filter usia
 min_age = df['Age'].min()
