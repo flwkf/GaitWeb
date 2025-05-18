@@ -17,7 +17,7 @@ class GaitAnalysisData:
             st.error(f"Error reading the Excel file: {e}")
             return
 
-        # Memproses data
+        # Data Processing
         self.cleaned_data = self.clean_data()
         self.normkin_processed = self.process_normkin()
         self.trial_info = self.extract_trial_info()
