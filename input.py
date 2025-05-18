@@ -9,10 +9,10 @@ from pymongo.server_api import ServerApi
 class GaitAnalysisData:
     def __init__(self, content, usia, jenis_kelamin):
         try:
-            # Membaca file Excel ke dalam DataFrame pandas
+            # Read an Excel file into a pandas DataFrame
             self.df = pd.read_excel(io.BytesIO(content), sheet_name=[0, 1])
-            self.suin = self.df[0]  # Lembar pertama untuk data mentah
-            self.normkin = self.df[1].iloc[:, :31]  # Lembar kedua untuk kinematika terstandarisasi
+            self.suin = self.df[0]  # First sheet for raw data
+            self.normkin = self.df[1].iloc[:, :31]  # Second sheet for standardized kinematics
         except Exception as e:
             st.error(f"Error reading the Excel file: {e}")
             return
