@@ -30,7 +30,6 @@ df.columns = df.columns.str.replace('Body Measurements.', '')
 df.columns = df.columns.str.replace('Norm Kinematics.', '')
 
 st.title("Dashboard Gait Analysis")
-st.sidebar.markdown(f"**Total Records:** {len(df)}")
 st.sidebar.title("Filter Data")
 # Filter usia
 min_age = df['Age'].min()
@@ -67,6 +66,7 @@ if gender != "All Gender":
 if filtered_df.empty:
     st.error(f"Tidak terdapat data dengan jenis kelamin {gender} yang terklasifikasi {classbmi}")
 else:
+    st.sidebar.markdown(f"**Total Records:** {len(filtered_df)}")
     # Pelvis
     percentage_cycle = pd.DataFrame(filtered_df['Percentage of Gait Cycle'].tolist())
     l_pelvis_angles = pd.DataFrame(filtered_df['LPelvisAngles_X'].tolist())
