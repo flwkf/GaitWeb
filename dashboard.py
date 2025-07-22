@@ -20,7 +20,12 @@ collection = db['coba']
 # Membaca data dari MongoDB
 cursor = collection.find()  # Mengambil semua dokumen
 data = list(cursor)  # Mengonversi cursor menjadi list
-
+if len(data) == 0:
+    st.error("The database does not have gait analysis data. Please add or upload the data first.")
+    st.stop() 
+elif len(data) == 1:
+    st.error("The database only has one gait analysis data. Please add or upload the data first.")
+    st.stop()
 # Normalisasi data untuk DataFrame
 df = pd.json_normalize(data)
 # Mengubah nama kolom untuk mempermudah akses
