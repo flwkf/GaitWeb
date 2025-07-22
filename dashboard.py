@@ -16,7 +16,17 @@ px.defaults.color_continuous_scale = 'reds'
 client = MongoClient(st.secrets["MONGO_URI"])
 db = client['GaitDB']
 collection = db['gait_data']
+zoom_level = 0.75
 
+st.markdown(f"""
+    <style>
+        .main {{
+            transform: scale({zoom_level});
+            transform-origin: top left;
+            width: {100/zoom_level}%;
+        }}
+    </style>
+""", unsafe_allow_html=True)
 # Membaca data dari MongoDB
 cursor = collection.find()  # Mengambil semua dokumen
 data = list(cursor)  # Mengonversi cursor menjadi list
