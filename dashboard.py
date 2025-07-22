@@ -15,7 +15,7 @@ px.defaults.color_continuous_scale = 'reds'
 # Koneksi ke MongoDB
 client = MongoClient(st.secrets["MONGO_URI"])
 db = client['GaitDB']
-collection = db['coba']
+collection = db['gait_data']
 
 # Membaca data dari MongoDB
 cursor = collection.find()  # Mengambil semua dokumen
