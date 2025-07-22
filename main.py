@@ -1,16 +1,12 @@
 import streamlit as st
-st.markdown(
-    """
+st.markdown("""
     <style>
-    .block-container {
-        zoom: 0.75;
-        -moz-transform: scale(0.75);
-        -moz-transform-origin: top left;
+    html, body, [data-testid="stAppViewContainer"] {
+        zoom: 0.75 !important;
     }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
+
 pages = {
     "Menu": [
         st.Page("dashboard.py", title="Dashboard"),
